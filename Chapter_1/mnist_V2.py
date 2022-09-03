@@ -1,9 +1,10 @@
+from unicodedata import name
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
 
 # network and training
-EPOCHS = 50
+EPOCHS = 200
 BATCH_SIZE = 128
 VERBOSE = 1
 NB_CLASSES = 10   # number of outputs = number of digits
@@ -41,6 +42,8 @@ model.add(keras.layers.Dense(N_HIDDEN,
    		name='dense_layer', activation='relu'))
 model.add(keras.layers.Dense(N_HIDDEN,
    		name='dense_layer_2', activation='relu'))
+model.add(keras.layers.Dense(N_HIDDEN,
+		name='dense_layer_22',activation='relu'))
 model.add(keras.layers.Dense(NB_CLASSES,
    		name='dense_layer_3', activation='softmax'))
 

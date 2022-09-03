@@ -7,7 +7,7 @@ from tensorflow.keras.callbacks import TensorBoard
 tensorboard_callback = TensorBoard('.logdir')
 
 # network and training
-EPOCHS = 50
+EPOCHS = 400
 BATCH_SIZE = 128
 VERBOSE = 1
 NB_CLASSES = 10   # number of outputs = number of digits

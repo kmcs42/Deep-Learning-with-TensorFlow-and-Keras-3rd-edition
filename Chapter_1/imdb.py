@@ -31,7 +31,9 @@ def build_model():
 	#takes the maximum value of either feature vector from each of the n_words features
 	model.add(layers.GlobalMaxPooling1D())
 	model.add(layers.Dense(128, activation='relu'))
-	model.add(layers.Dropout(0.5))
+	model.add(layers.Dropout(0.3))
+	model.add(layers.Dense(32,activation='relu'))
+	model.add(layers.Dropout(.2))
 	model.add(layers.Dense(1, activation='sigmoid'))
 
 	return model
@@ -39,7 +41,7 @@ def build_model():
 (X_train, y_train), (X_test, y_test) = load_data()
 model=build_model()
 model.summary()
-
+print(X_train.shape,y_train.shape)
 model.compile(optimizer = "adam", loss = "binary_crossentropy",
  metrics = ["accuracy"]
 )
